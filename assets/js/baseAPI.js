@@ -5,7 +5,7 @@ function format2json(source) {
   let target = {}
   source.split('&').forEach(function (el) {
     const [k1, k2] = el.split('=')
-    target[k1] = k2
+    target[k1] = decodeURIComponent(k2)
 
   })
   return JSON.stringify(target)
